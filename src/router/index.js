@@ -1,0 +1,18 @@
+import { createWebHistory, createRouter } from "vue-router";
+import BookSearch from "../components/BookSearch.vue";
+
+const routes = [
+    {
+        path:"/",
+        alias:"/search",
+        name: "bookSearch",
+        component: BookSearch
+    }
+];
+
+const router = createRouter({
+    history: createWebHistory(),
+    routes
+})
+
+export default router;
