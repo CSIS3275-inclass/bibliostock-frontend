@@ -1,19 +1,21 @@
 <template>
-    <div>
+    <div class="container">
       <h2>Search Books</h2>
       <form>
-        <div>
-          <label for="title">Title</label>
-          <input type="text" v-model="title" id="title" placeholder="Enter title">
+        <div class="input-group mb-3">
+          <label class="input-group-text" for="title">Title</label>
+          <input class="form-control" type="text" v-model="title" id="title" placeholder="Enter title">
         </div>
-        <div >
-          <label for="author">Author</label>
-          <input type="text"  v-model="author" id="author" placeholder="Enter author">
+        <div class="input-group mb-3">
+          <label class="input-group-text" for="author">Author</label>
+          <input class="form-control"  v-model="author" id="author" placeholder="Enter author">
         </div>
-        <button  v-on:click.prevent="searchBooks()">Search</button>
+        <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+          <button class="btn btn-dark"  v-on:click.prevent="searchBooks()">Search</button>
+        </div>
       </form>
   
-      <div v-if="books">
+      <div v-if="books" class="mt-3">
         <h3>Results</h3>
         <ul>
           <li v-for="book in books" :key="book.id">
