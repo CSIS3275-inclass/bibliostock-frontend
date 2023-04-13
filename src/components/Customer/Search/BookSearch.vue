@@ -28,7 +28,7 @@
   </template>
   
   <script>
-  import BookSearchService from "../services/BookSearchService.js";
+  import BookSearchService from "@/services/Customer/BookSearchService.js";
   
   export default {
     name: "BookSearch",

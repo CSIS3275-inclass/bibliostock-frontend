@@ -1,5 +1,5 @@
 import { createWebHistory, createRouter } from "vue-router";
-import BookSearch from "../components/BookSearch.vue";
+import BookSearch from "@/components/Customer/Search/BookSearch.vue";
 
 const routes = [
     {
