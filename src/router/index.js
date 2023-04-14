@@ -10,6 +10,7 @@ import userRegistration from "@/components/Customer/UserRegistration";
 import stockList from "@/components/Manager/StockList"
 import managerRegistration from "@/components/Manager/ManagerRegistration"
 import shoppingCart from "@/components/Customer/ShoppingCart"
+import favoriteList from "@/components/Customer/FavoriteList"
 
 
 
@@ -61,6 +62,12 @@ const routes = [
         path:"/user/cart",
         name: "shoppingCart",
         component: shoppingCart
+    },
+    {
+        
+        path:"/user/favorite",
+        name: "FavoriteList",
+        component: favoriteList
     },
     {
         

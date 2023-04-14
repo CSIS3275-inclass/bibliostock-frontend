@@ -4,6 +4,9 @@ class BookstockService {
     getBooksInStock(){
         return http.get("/stocks");
     }
+    getBookstockByBook(bookId){
+        return http.get(`/stocks/book/${bookId}`);
+    }
 
 }
 

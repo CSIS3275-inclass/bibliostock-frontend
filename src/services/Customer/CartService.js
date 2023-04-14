@@ -68,6 +68,11 @@ class CartService {
         }
         return http.delete(`/cart/${cartId}`,config);
     }
+
+    //add item to cart
+    addItemToCart(cartID,bookFormatRequest){
+        return http.post(`/cart/${cartID}`,bookFormatRequest);
+    }
 }
 
 export default new CartService();
