@@ -63,8 +63,7 @@
                         if(this.isManager==0)
                             this.$router.push({ name: "allBooks"}); //redirect to homepage
                         else{
-                            this.$router.push({ name: "managerRegistration"}); //redirect to Manager homepage
-                            // this.errorMessage="manager logged in "+ this.user.email;
+                            this.$router.push({ name: "stockList"}); //redirect to Manager homepage
                         }
                             
                     })

@@ -7,6 +7,8 @@ import allAuthors from '@/components/Customer/Home/AllAuthors.vue'
 import allGenres from '@/components/Customer/Home/AllGenres.vue'
 import userLogin from "@/components/UserLogin";
 import userRegistration from "@/components/Customer/UserRegistration";
+import stockList from "@/components/Manager/StockList"
+
 
 const routes = [
     {
@@ -50,6 +52,12 @@ const routes = [
         path:"/books/genres",
         name: "allGenres",
         component: allGenres
+    },
+    {
+        
+        path:"/manager/stock",
+        name: "stockList",
+        component: stockList
     },
 
 ];
