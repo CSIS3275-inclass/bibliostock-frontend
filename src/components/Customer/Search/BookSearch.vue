@@ -1,7 +1,9 @@
 <template>
+  <div>
+    <nav-bar></nav-bar>
     <div class="container">
       <search-breadcrumb></search-breadcrumb>
-      <h2>Search Books</h2>
+      <h2 class="text-center mt-3">Search Books</h2>
       <form>
         <div class="input-group mb-3">
           <label class="input-group-text" for="title">Title</label>
@@ -28,15 +30,19 @@
         <i class="bi bi-exclamation-circle"></i> No books found.
       </div>
     </div>
+  </div>
   </template>
   
   <script>
   import BookSearchService from "@/services/Customer/BookSearchService.js";
   import SearchBreadcrumb from "@/components/Customer/Search/SearchBreadcrumb.vue";
+  import navBar from "@/components/Customer/NavBar";
+
   export default {
     name: "BookSearch",
     components: {
-      SearchBreadcrumb
+      SearchBreadcrumb,
+      navBar
     },
     data() {
       return {

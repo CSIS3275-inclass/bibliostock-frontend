@@ -2,11 +2,16 @@ import { createWebHistory, createRouter } from "vue-router";
 import BookSearch from "@/components/Customer/Search/BookSearch.vue";
 import GenreSearch from '@/components/Customer/Search/GenreSearch.vue'
 import ReviewsSearch from '@/components/Customer/Search/ReviewsSearch.vue'
+import AllBooks from '@/components/Customer/Home/AllBooks.vue'
 
 const routes = [
     {
         path:"/",
-        alias:"/search",
+        name: "allBooks",
+        component: AllBooks
+    },
+    {
+        path:"/search",
         name: "bookSearch",
         component: BookSearch
     },

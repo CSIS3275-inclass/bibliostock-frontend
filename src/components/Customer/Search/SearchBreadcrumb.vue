@@ -1,5 +1,5 @@
 <template>
-<nav aria-label="breadcrumb">
+<nav class="mt-3" aria-label="breadcrumb">
   <ol class="breadcrumb">
     <li class="breadcrumb-item">
         <router-link to="/search">Author and Book Search</router-link>
