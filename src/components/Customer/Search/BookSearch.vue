@@ -1,5 +1,6 @@
 <template>
     <div class="container">
+      <search-breadcrumb></search-breadcrumb>
       <h2>Search Books</h2>
       <form>
         <div class="input-group mb-3">
@@ -31,9 +32,12 @@
   
   <script>
   import BookSearchService from "@/services/Customer/BookSearchService.js";
-  
+  import SearchBreadcrumb from "@/components/Customer/Search/SearchBreadcrumb.vue";
   export default {
     name: "BookSearch",
+    components: {
+      SearchBreadcrumb
+    },
     data() {
       return {
         title: "",
