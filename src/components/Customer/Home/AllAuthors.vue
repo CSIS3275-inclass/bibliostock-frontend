@@ -2,7 +2,7 @@
     <div>
       <Nav-Bar></Nav-Bar>
         <div class="container">
-          <h1 class="text-center mt-3">Authors List</h1>
+          <h2 class="text-center mt-3">Authors List</h2>
           <table class="table align-middle">
             <thead>
               <tr class="align-top">

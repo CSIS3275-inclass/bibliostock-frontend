@@ -9,6 +9,7 @@ import userLogin from "@/components/UserLogin";
 import userRegistration from "@/components/Customer/UserRegistration";
 import stockList from "@/components/Manager/StockList"
 import managerRegistration from "@/components/Manager/ManagerRegistration"
+import shoppingCart from "@/components/Customer/ShoppingCart"
 
 
 
@@ -54,6 +55,12 @@ const routes = [
         path:"/books/genres",
         name: "allGenres",
         component: allGenres
+    },
+    {
+        
+        path:"/user/cart",
+        name: "shoppingCart",
+        component: shoppingCart
     },
     {
         
