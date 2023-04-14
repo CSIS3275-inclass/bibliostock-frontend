@@ -15,7 +15,7 @@
         </div>
       </form>
   
-      <div v-if="books" class="mt-3">
+      <div v-if="books.length" class="mt-3">
         <h3>Results</h3>
         <ul>
           <li v-for="book in books" :key="book.id">
@@ -23,8 +23,8 @@
           </li>
         </ul>
       </div>
-      <div  v-else-if="searched">
-        <p>No books found.</p>
+      <div class="alert alert-warning m-3" v-else-if="searched">
+        <i class="bi bi-exclamation-circle"></i> No books found.
       </div>
     </div>
   </template>
@@ -48,6 +48,7 @@
           .then(response => {
             this.books = response.data;
             this.searched = true;
+            console.log(response.data)
           })
           .catch(error => {
             console.log(error);
