@@ -8,6 +8,8 @@ import allGenres from '@/components/Customer/Home/AllGenres.vue'
 import userLogin from "@/components/UserLogin";
 import userRegistration from "@/components/Customer/UserRegistration";
 import stockList from "@/components/Manager/StockList"
+import managerRegistration from "@/components/Manager/ManagerRegistration"
+
 
 
 const routes = [
@@ -59,6 +61,12 @@ const routes = [
         name: "stockList",
         component: stockList
     },
+    {
+        
+        path:"/manager/admin",
+        name: "managerRegistration",
+        component: managerRegistration
+    }
 
 ];
 
