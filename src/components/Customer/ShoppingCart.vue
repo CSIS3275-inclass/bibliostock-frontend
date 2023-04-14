@@ -25,8 +25,8 @@
                                 <input class="form-control" type="number" name="quanity" id="quantity" v-model="item.unitQuantity">
                                 
                                 <!-- will split the id to remove or update -->
-                                <div class="d-grid gap-2 d-md-flex justify-content-md-end">
-                                    <button class="btn btn-dark mt-3"
+                                <div class="justify-content-md-end">
+                                    <button class="btn btn-dark mt-3 mb-3"
                                         :id="books[index].bookId+','+books[index].formatId+','+index"
                                         @click="handleUpdateClick">
                                         update quantity

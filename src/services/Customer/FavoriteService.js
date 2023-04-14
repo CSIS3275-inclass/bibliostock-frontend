@@ -9,6 +9,12 @@ class FavoriteService {
     deleteBook(ID, bookid) {
         return http.delete(`/favorites/${ID}/${bookid}`);
     }
+
+    addBookToFavorites(ID, bookid) {
+        return http.post(`/favorites/${ID}/${bookid}`);
+    }
+
+    
 }
 
 

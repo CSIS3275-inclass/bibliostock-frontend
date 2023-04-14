@@ -7,7 +7,7 @@
             <p class="card-text">{{book.synopsis}}</p>
             </div>
             <ul class="list-group list-group-flush">
-            <li class="list-group-item">Authored by: {{ book.author }} </li>
+            <li v-for="(author,authorindex) in book.authors" :id="authorindex" :key="authorindex" class="list-group-item">Authored by: {{ author.name }} </li>
             <li class="list-group-item">Publication date: <strong>{{ book.publicationDate }}</strong> </li>
             <li class="list-group-item">ISBN: <strong>{{ book.isbn }}</strong></li>
             <li class="list-group-item">Average Review: <strong>{{ book.averageReview }}</strong></li>
@@ -25,7 +25,7 @@
                     </button>
                 </div>
     
-                <button class="btn btn-dark mb-2" @click="addToFavorites">
+                <button :id="userId+','+book.id" class="btn btn-dark mb-2" @click="addToFavorite">
                     <i class="bi bi-star fs-6"></i>
                     Add to favorites
                 </button>
@@ -39,6 +39,8 @@
     import BookstockService from '@/services/Manager/BookstockService.js'
     import CartService from '@/services/Customer/CartService.js';
     import userSessionService from "@/services/UserSessionService";
+    import FavoriteService from '@/services/Customer/FavoriteService.js';
+
 
 export default {
     name: "bookCard",
@@ -87,8 +89,35 @@ export default {
                     console.log(error);
                 })
         },
-        addToFavorite(){
-
+        getAllFavorites() {
+        FavoriteService.retrieveAllFavorites()
+            .then(response => {
+                let fav = response.data;
+                console.log(fav);
+                this.$router.push({ name: "allFavorites" });
+            })
+            .catch(error => {
+                console.log(error);
+            });
+        },
+        addToFavorite(event){
+            userSessionService.validateSession(this.userId,this)
+                .then(response=>{
+                    if(response===true){
+                        const ids = event.target.id.split(",");
+            
+                        const obj = {
+                            "favid": ids[0],
+                            "bookid": ids[1]
+                        };
+                        console.log(event.target.id);
+                        FavoriteService.addBookToFavorites(obj.favid, obj.bookid);
+                        this.getAllFavorites();
+                    }
+                })
+                .catch(error=>{
+                    console.log(error);
+                })
         },
         getBook(){
             this.books.forEach(book => {
