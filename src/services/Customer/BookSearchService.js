@@ -21,6 +21,9 @@ class BookSearchService {
     }
     return http.get("/books/genresearch", { params });
   }
+  retrieveByRatings(reviewId){
+    return http.get(`/book-review?averageReview=${reviewId}`)
+  }
 }
 
 export default new BookSearchService();
